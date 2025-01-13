@@ -1,14 +1,14 @@
 <?php
     require "koneksi.php";
 
-        if ($_SERVER['REQUEST_METHOD'] = "POST") {
+        if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $nik = $_POST['nik'];
 
         // cek dulu apakah nik telah terdaftar
-        $sql = "SELECT FROM masyarakat WHERE nik=?";
-        $cek = $koneksi -> execute_query($sql, [$nik]);
+        $sql = "SELECT * FROM masyarakat WHERE nik=?";
+        $cek = $koneksi->execute_query($sql, [$nik]);
 
-    if (mysqli_num_rows($cek) = 1) {
+    if (mysqli_num_rows($cek) == 1) {
             echo "<script>alert('NIK sudah digunakan!')</script>";
         } else {
 
