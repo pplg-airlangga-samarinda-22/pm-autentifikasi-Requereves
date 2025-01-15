@@ -7,16 +7,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = md5($_POST['password']);
 
     // fungsi execute_query hanya bisa digunakan pada PHP 8.2
-    $sql = "SELECT * FROM masyarakat WHERE nik? AND username=? AND password=?";
+    $sql = "SELECT * FROM masyarakat WHERE nik=? AND username=? AND password=?";
     $row = $koneksi->execute_query($sql, [$nik, $username, $password]);
 
     if (mysqli_num_rows($row) == 1) {
         session_start();
+        
+        $user = mysqli_fetch_assoc($row);
         $_SESSION['nik'] = $nik;
-        header("location:index.php");
+        header("location: masyarakat/index.php");
+        exit;    
     } else {
-        echo "<script>alert('Gagal Login!')</script>";
+        echo'<script>alert("gagal login");</script>';
     }
+
 }
 ?>
 
@@ -46,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
         <button type="submit">Login</button>
         <a href="register.php">Register</a>
+        <a href="loginAdmin.php">Admin</a>
     </form >
 </body>
 </html>

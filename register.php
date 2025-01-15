@@ -1,5 +1,5 @@
 <?php
-    require "koneksi.php";
+    require "../koneksi.php";
 
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
             $nik = $_POST['nik'];
@@ -19,7 +19,7 @@
             $sql = "INSERT INTO masyarakat SET nik=?, nama=?, telp=?, username=?, password=?";
             $koneksi -> execute_query($sql, [$nik, $nama, $telepon, $username, $password]);
             echo "<script>alert('Pendaftaran berhasil!')</script>";
-            header("location:login.php");
+            header("location:loginMasyarakat.php");
         }
     }
 ?>
@@ -58,7 +58,7 @@
         </div>
         <button type="submit">Register</button>
     </form>
-    <a href="login.php">Batal</a>
+    <a href="loginMasyarakat.php">Batal</a>
 </body>
 
 </html>

@@ -1,8 +1,8 @@
 <?php
     session_start();
-    require_once "koneksi.php";
-    if (empty($_SESSION['nik'])) {
-        header("location:login.php");
+    require_once '../koneksi.php';
+    if (empty($_SESSION['level'])) {
+        header("location:../loginAdmin.php");
     }
 ?>
  
@@ -14,11 +14,12 @@
     <title>Laporan Pengaduan</title>
  </head>
  <body>
-    <h1>Selamat datang  di aplikasi pengaduan masyarakat</h1>
+    <h1>Selamat datang di aplikasi pengaduan masyarakat (ADMIN)</h1>
     <nav>
         <a href="index.php">Dashboard</a>
         <a href="aduan.php">Aduan</a>
-        <a href="logout.php">Logout</a>
+        <a href="tambahPetugas.php">Regis</a>
+        <a href="../logout.php">Logout</a>
     </nav>
  </body>
  </html>
