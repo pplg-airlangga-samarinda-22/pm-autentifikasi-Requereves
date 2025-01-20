@@ -1,4 +1,8 @@
 <?php 
+
+session_start();
+    require "../koneksi.php";
+
     if($_SERVER['REQUEST_METHOD'] === 'GET'){
         $id = $_GET['id'];
         $sql = "SELECT * FROM petugas WHERE id_petugas=?";
@@ -10,7 +14,17 @@
         $nama = $row['telp']; 
         $nama = $row['level']; 
     } elseif($_SERVER['REQUEST_METHOD'] === 'POST'){
+        $id = $_GET['id'];
+        $nama = $_POST['nama'];
+        $telepon = $_GET['telp'];
+        $level = $_GET['level'];
 
+        $sql = "UPDATE petugas SET nama=?, telp=? , level=? WHERE id";
+        $row = $koneksi -> execute_query($sql, [$nama, $telepon, $nik]);
+
+            if ($row) {
+                header("Location:masyarakat.php");
+            }
     }
 
 ?>
@@ -25,7 +39,6 @@
 </head>
 
 <body>
-    <h1>Edit Petugas</h1>
 
     <body>
         <h1>Edit Petugas</h1>
@@ -33,7 +46,7 @@
             <div class="form-item">
                 <label for="level">Level Akses</label>
                 <select name="level" id="level">
-                    <!-- <option value="" disabled selected>Pilih level akses</option> -->
+                    <option value="" disabled selected>Pilih level akses</option>
                         <option value="admin" <?= ($level === 'admin') ? 'selected' : ''; ?>>Admin</option>
                         <option value="petugas" <?= ($level === 'petugas') ? 'selected' : ''; ?>>Petugas</option>
                 </select>

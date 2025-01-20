@@ -13,7 +13,7 @@ require "../koneksi.php";
 <body>
     <h1>Data Masyarakat</h1>
     <a href="index.php">Kembali</a>
-    <a href="masyarakat-form.php">Tambah Masyarakat baru</a>
+    <a href="Tambah-masyarakat.php">Tambah Masyarakat baru</a>
     <table>
         <thead>
             <th>No</th>
@@ -37,8 +37,8 @@ require "../koneksi.php";
                     <td><?= $row['username'] ?></td>
                     <td><?= $row['telp'] ?></td>
                     <td>
-                        <a href="masyarakat-edit.php?id=<?=$row['nik']?>">Edit</a>
-                        <a href="masyarakat-hapus.php?id=<?=$row['nik']?>">Hapus</a>
+                        <a href="masyarakat-edit.php?nik=<?=$row['nik']?>">Edit</a>
+                        <a href="masyarakat-hapus.php?nik=<?=$row['nik']?>">Hapus</a>
                     </td>
                 </tr>
                 <?php

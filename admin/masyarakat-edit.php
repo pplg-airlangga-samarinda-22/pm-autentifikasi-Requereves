@@ -1,11 +1,12 @@
 <?php
+session_start();
     require "../koneksi.php";
 
 
     if ( $_SERVER['REQUEST_METHOD'] == 'GET') {
           $nik = $_GET['nik'];
           $sql = "SELECT * FROM masyarakat where nik=?"; 
-          $row = $koneksi -> execute_query($sql, [$nik])-> fetch_array();
+          $row = $koneksi->execute_query($sql, [$nik])->fetch_assoc();
           $nama = $row['nama'];
           $username = $row['username'];
           $telepon = $row['telp'];

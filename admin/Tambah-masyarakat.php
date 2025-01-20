@@ -8,18 +8,18 @@
         $sql = "SELECT * FROM masyarakat WHERE nik=?";
         $cek = $koneksi->execute_query($sql, [$nik]);
 
-    if (mysqli_num_rows($cek) == 1) {
-            echo "<script>alert('NIK sudah digunakan!')</script>";
+    if ($cek->num_rows == 1) {
+            echo"<script>alert('NIK SUDAH DIGUNAKAN');</script>";
         } else {
 
             $nama = $_POST['nama'];
-            $telepon = $_POST['telepon'];
+            $telp = $_POST['telepon'];
             $username = $_POST['username'];
             $password = md5($_POST['password']);
-            $sql = "INSERT INTO masyarakat SET nik=?, nama=?, telp=?, username=?, password=?";
-            $koneksi -> execute_query($sql, [$nik, $nama, $telepon, $username, $password]);
+            $sql = "INSERT INTO masyarakat (nik, nama, telp, username, password) values(?, ?, ?, ?, ?)";
+            $row = $koneksi -> execute_query($sql, [$nik, $nama, $telp, $username, $password]);
             echo "<script>alert('Pendaftaran berhasil!')</script>";
-            header("location:loginMasyarakat.php");
+            header("location:masyarakat.php");
         }
     }
 ?>
