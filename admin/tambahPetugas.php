@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $sql = "INSERT INTO petugas (username, nama_petugas, password, telp, level) VALUES ('$username', '$nama_petugas', '$password', '$telepon', '$level')";
         if (mysqli_query($koneksi, $sql)) {
             echo "<script>alert('Pendaftaran berhasil!');</script>";
-            header("location:index.php"); // Redirect ke halaman login setelah berhasil
+            header("location:petugas.php"); // Redirect ke halaman login setelah berhasil
             exit();
         } else {
             echo "<script>alert('Terjadi kesalahan!');</script>";
@@ -67,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         </div>
         <button type="submit">Register</button>
     </form>
-    <a href="index.php">Batal</a>
+    <a href="petugas.php">Batal</a>
 </body>
 
 </html>

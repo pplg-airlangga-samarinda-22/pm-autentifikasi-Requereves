@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $row = $koneksi->execute_query($sql, [$tanggal, $nik, $laporan, $foto, $status]);
 
     if (!empty($foto)) {
-        move_uploaded_file($_FILES['foto']['tmp_name'], 'gambar/' . $_FILES['foto']['name']);
+        move_uploaded_file($_FILES['foto']['tmp_name'], '../gambar/' . $_FILES['foto']['name']);
     }
 
     if ($row) {

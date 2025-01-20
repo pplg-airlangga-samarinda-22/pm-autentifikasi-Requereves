@@ -17,8 +17,10 @@
     <h1>Selamat datang di aplikasi pengaduan masyarakat (ADMIN)</h1>
     <nav>
         <a href="index.php">Dashboard</a>
-        <a href="aduan.php">Aduan</a>
-        <a href="tambahPetugas.php">Regis</a>
+        <a href="pengaduan.php">Aduan</a>
+        <a href="masyarakat.php">Masyarakat</a>
+        <a href="petugas.php">Petugas</a>
+        <a href="laporan.php">Laporan</a>
         <a href="../logout.php">Logout</a>
     </nav>
  </body>
