@@ -8,7 +8,7 @@
           $row = $koneksi -> execute_query($sql, [$id])-> fetch_array();
 
           $nik = $row['nik'];
-          $laporan = $row['laporan'];
+          $laporan = $row['isi_laporan'];
           $foto = $row['foto'];
           $status = $row['status'];
 

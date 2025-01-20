@@ -13,7 +13,7 @@ require "../koneksi.php";
 <body>
     <h1>Data Masyarakat</h1>
     <a href="index.php">Kembali</a>
-    <a href="Tambah-masyarakat.php">Tambah Masyarakat baru</a>
+    <a href="Tambah-masyarakat.php">Tambah</a>
     <table>
         <thead>
             <th>No</th>

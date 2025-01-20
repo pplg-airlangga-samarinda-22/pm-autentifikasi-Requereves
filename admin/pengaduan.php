@@ -13,7 +13,7 @@ require "../koneksi.php";
 <body>
     <h1>Data Petugas</h1>
     <a href="index.php">Kembali</a>
-    <a href="tambahPetugas.php">Tambah petugas baru</a>
+    <a href="tambahPetugas.php">Tambah</a>
     <table>
         <thead>
             <th>No</th>
@@ -52,7 +52,7 @@ require "../koneksi.php";
                         <?php 
                         }
                         ?>
-                        <a href="pengaduan-hapus.php?id=<?=$row['id_pengaduan']?>">Hpaus</a>
+                        <a href="pengaduan-hapus.php?id=<?=$row['id_pengaduan']?>">Hapus</a>
                     </td>
                 </tr>
                 <?php
