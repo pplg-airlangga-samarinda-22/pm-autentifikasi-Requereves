@@ -16,7 +16,7 @@
 
             $id = $_GET['id'];
 
-            $sql = "UPDATE pengaduan SET status='proses, WHERE id_pengaduan=?";
+            $sql = "UPDATE pengaduan SET status='proses' WHERE id_pengaduan=?";
             $row = $koneksi -> execute_query($sql, [$id]);
 
             if ($row) {

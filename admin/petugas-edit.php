@@ -20,7 +20,7 @@ session_start();
         $level = $_GET['level'];
 
         $sql = "UPDATE petugas SET nama=?, telp=? , level=? WHERE id";
-        $row = $koneksi -> execute_query($sql, [$nama, $telepon, $nik]);
+        $row = $koneksi -> execute_query($sql, [$nama, $telepon, $id]);
 
             if ($row) {
                 header("Location:masyarakat.php");

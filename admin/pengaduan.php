@@ -42,7 +42,7 @@ require "../koneksi.php";
                             ?>
                         <a href="pengaduan-proses.php?id=<?=$row['id_pengaduan']?>">Verifikasi</a>
                         <?php 
-                        }elseif ($row['status']== 'selesai') {
+                        }elseif ($row['status']== 'proses') {
                             ?>
                         <a href="pengaduan-selesai.php?id=<?=$row['id_pengaduan']?>">Tanggapi</a>
                         <?php 

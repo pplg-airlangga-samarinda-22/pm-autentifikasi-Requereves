@@ -19,7 +19,11 @@
         <a href="index.php">Dashboard</a>
         <a href="pengaduan.php">Aduan</a>
         <a href="masyarakat.php">Masyarakat</a>
+
+        <?php if ($_SESSION['level'] === 'admin') { ?>
         <a href="petugas.php">Petugas</a>
+        <?php } ?>
+
         <a href="laporan.php">Laporan</a>
         <a href="../logout.php">Logout</a>
     </nav>

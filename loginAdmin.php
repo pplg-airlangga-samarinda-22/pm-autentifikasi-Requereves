@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("location: admin/index.php");
             exit();
         } elseif ($_SESSION['level'] == 'petugas') {
-            header("location: petugas/index.php");
+            header("location: admin/index.php");
             exit();
         }
     } else {

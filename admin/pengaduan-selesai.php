@@ -10,14 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $foto = $row['foto'];
     $status = $row['status'];
 } elseif ($_SERVER['REQUEST_METHOD'] = 'POST') {
-    $id_petugas = $_SESSION['id'];
+    $id_petugas = $_SESSION['id_petugas'];
     $id_pengaduan = $_GET['id'];
     $tanggal = date('Y-m-d');
     $tanggapan = $_POST['tanggapan'];
     $status = 'selesai';
 
     // update pengaduan
-    $sql = "UPDATE pengaduan SET status? WHERE id_pengaduan=?";
+    $sql = "UPDATE pengaduan SET status=? WHERE id_pengaduan=?";
     $row = $koneksi->execute_query($sql, [$status, $id_pengaduan]);
     // kirim tanggapan
     $sql = "INSERT INTO tanggapan (id_pengaduan, tgl_tanggapan, tanggapan, id_petugas) values (?, ?, ?, ?)";

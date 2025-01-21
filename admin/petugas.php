@@ -13,6 +13,7 @@ require "../koneksi.php";
 <body>
     <h1>Data Petugas</h1>
     <a href="index.php">Kembali</a>
+    
     <a href="tambahPetugas.php">Tambah</a>
     <table>
         <thead>
