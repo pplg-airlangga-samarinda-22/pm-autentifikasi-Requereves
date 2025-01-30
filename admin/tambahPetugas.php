@@ -36,38 +36,43 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Petugas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body>
-    <h1>Registrasi Petugas Baru</h1>
-    <form action="" method="post">
-        <div class="form-item">
-            <label for="nama_petugas">Nama</label>
-            <input type="text" name="nama_petugas" id="nama_petugas" required>
-        </div>
-        <div class="form-item">
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" required>
-        </div>
-        <div class="form-item">
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" required>
-        </div>
-        <div class="form-item">
-            <label for="telepon">Telepon</label>
-            <input type="tel" name="telepon" id="telepon" required>
-        </div>
-        <div class="form-item">
-            <label for="level">Role</label>
-            <select name="level" class="form-control" required >
-            <option value="">Pilih Level Petugas </option>
-            <option value="admin"> Admin </option>
-            <option value="petugas"> Petugas </option>
-        </select>
-        </div>
-        <button type="submit">Register</button>
-    </form>
-    <a href="petugas.php">Batal</a>
+<body class="bg-gray-100 flex justify-center items-center h-screen">
+    <div class="bg-white p-6 rounded-lg shadow-md w-96">
+        <h1 class="text-2xl font-bold mb-4 text-center">Registrasi Petugas Baru</h1>
+        <form action="" method="post">
+            <div class="mb-4">
+                <label for="nama_petugas" class="block text-sm font-medium text-gray-700">Nama</label>
+                <input type="text" name="nama_petugas" id="nama_petugas" required class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" name="username" id="username" required class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" name="password" id="password" required class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="telepon" class="block text-sm font-medium text-gray-700">Telepon</label>
+                <input type="tel" name="telepon" id="telepon" required class="w-full p-2 border rounded">
+            </div>
+            <div class="mb-4">
+                <label for="level" class="block text-sm font-medium text-gray-700">Role</label>
+                <select name="level" class="w-full p-2 border rounded" required>
+                    <option value="">Pilih Level Petugas</option>
+                    <option value="admin">Admin</option>
+                    <option value="petugas">Petugas</option>
+                </select>
+            </div>
+            <div class="flex justify-between">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Register</button>
+                <a href="petugas.php" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">Batal</a>
+            </div>
+        </form>
+    </div>
 </body>
 
 </html>
